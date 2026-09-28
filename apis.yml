@@ -1,23 +1,69 @@
 aid: biofire
+
 name: Biofire
-description: 'Biofire is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://biofire.com/wp-content/uploads/2025/04/modernes_wohnzimmer.jpg
+
+description: 'Biofire manufactures handcrafted ceramic storage stoves and fireplaces in Germany, offering custom designs and high-quality heating solutions. With over 40 years of experience, the company provides personalized service, from planning to on‑site installation, emphasizing durability, efficiency, and timeless design. Their product range includes various stove models, accessories, and consulting services for optimal home heating.'
+
 url: https://raw.githubusercontent.com/api-evangelist/biofire/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
 - Company
-apis: []
+- Heating
+- Ceramics
+- CustomDesign
+- GermanManufacturing
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: WellKnown
+  url: well-known/biofire-well-known.yml
+- type: Hosts
+  url: hosts/biofire-hosts.yml
+- type: DomainSecurity
+  url: security/biofire-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/biofire
+  url: https://biofire.com
+- type: Contact
+  url: https://biofire.com/kontakt/
+- type: Impressum
+  url: https://biofire.com/impressum/
+
+apis: []
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-09-28'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://equityzen.com/company/biofire
+    status: 403
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
